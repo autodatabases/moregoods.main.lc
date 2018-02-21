@@ -1,0 +1,9 @@
+<td>&nbsp;</td>
+<td>Итого:</td>
+<td>{$oCurrency->PrintPrice($aSubtotalBalance.before)}</td>
+<td>&nbsp;</td>
+<td>{$oCurrency->PrintPrice($aSubtotalBalance.add)}</td>
+<td>&nbsp;</td>
+<td>{$oCurrency->PrintPrice($aSubtotalBalance.remove)}</td>
+<td>&nbsp;</td>
+<td>{$oCurrency->PrintPrice($aSubtotalBalance.last)}</td>

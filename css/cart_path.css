@@ -1,0 +1,65 @@
+.step {
+	height:77px;
+}
+
+.step .item {
+	float:left;
+	width:20%;
+}
+
+.step td .line  {
+	height:26px;
+	background:url('/image/design/step_bg.png') repeat-x;
+	text-align:center;
+}
+
+.step td .line .number  {
+	width:25px;
+	height:26px;
+	background:url('/image/design/step_item.png') no-repeat;
+	text-align:center;
+	line-height:26px;
+	display:inline-block;
+	color:#ffffff;
+	font-weight:bold;
+	text-shadow:#aca9a5 1px 1px 0;
+}
+
+.step td.selected .line .number  {
+	background:url('/image/design/step_item_h.png') no-repeat;
+	color:#9d958b;
+	text-shadow:#ffffff 1px 1px 0;
+}
+
+.step td .name  {
+	position:absolute;
+	color:#333333;
+	font-size:13px;
+	width:100px;
+	margin:0 0 0 -38px;
+	text-align:center;
+	padding:5px 0 0 0;
+}
+
+.step td.selected .name  {
+	color:#279af4;
+}
+
+.step td:first-child .name  {
+	margin:0;
+	text-align:left;
+}
+
+.step td:last-child .name  {
+	margin:0 0 0 -50px;
+	text-align:left;
+}
+div.payment_description{
+    border: 2px solid #3f4c56;
+    border-radius: 6px;
+    color: white;
+    background-color: #5fb7c1; 
+    padding: 10px 10px 10px 100px;
+    margin: -5px 0px 20px 100px;
+
+}

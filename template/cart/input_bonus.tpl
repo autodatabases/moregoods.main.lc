@@ -1,0 +1,2 @@
+{$oLanguage->getMessage("Use_bonus")}:&nbsp;<input  onKeyUp="xajax_process_browse_url('?action=delivery_setbonus&xajax_request=1&bonus='+this.value);  return false;" type="text" name="bonus">
+			<input type=hidden name="bonus" value="">

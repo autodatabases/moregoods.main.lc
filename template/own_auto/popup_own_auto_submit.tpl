@@ -1,0 +1,1 @@
+<input type='button' value='{$oLanguage->getMessage('Apply')}' onclick='popup_submit(this);'>

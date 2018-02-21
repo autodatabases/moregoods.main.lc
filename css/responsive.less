@@ -1,0 +1,915 @@
+
+@screen-phone:               480px;
+@screen-tablet:              768px;
+@screen-desktop:             992px;
+@screen-lg-desktop:          1200px;
+
+
+.clearfix() {
+	&:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.at-mainer,
+.at-wrapper {
+	min-width: 200px;
+}
+
+.at-head-navigation {
+	padding: 0;
+	.at-mainer .secondary-navigation,
+	.at-mainer .language-navigation,
+	.at-mainer .user-profile{
+		margin: 8px 0;
+	}
+	
+	.language-navigation { 		
+		display: none; 
+	}
+	
+	.menu-btn {
+		display: none;
+		float: left;
+// 		width: 20px;
+		height: 20px;
+		background: transparent url(/image/menu-btn.png) center left no-repeat;
+		background-size: contain;
+		margin: 5px 20px 5px 0;
+		cursor: pointer;
+		color: white;
+		padding-left: 30px;		
+		text-transform: capitalize;
+		line-height: 20px;
+	}
+	.cart-btn {
+		display: none;
+		float: right;
+// 		width: 20px;
+		height: 20px;
+		background: transparent url(/image/basket-white.png) center left no-repeat;
+		background-size: contain;
+		margin: 5px 0 5px 10px;
+		cursor: pointer;
+		color: white;
+		padding-left: 30px;		
+		text-transform: capitalize;
+		line-height: 20px;
+	}
+	.user-profile {
+		display: none;
+		float: left;
+// 		margin-right: 20px;
+		.user-pick-bg {
+		    background-size: cover;
+		    display: inline-block;
+		    height: 14px;
+		    width: 20px;		
+		}
+	}
+}
+
+
+.tree-assemblage-table {
+	.left-col {
+		float: left;
+		width: 40%;
+	}
+	.right-col {
+		float: right;
+		width: 60%;
+	}
+}
+
+.info-part {
+	.image-block {
+		width: 255px;
+		float: left;
+	}
+	.title-block {
+		margin-left: 265px;
+	}
+	.right-block {
+		.clearfix();
+		margin-left: 265px;
+		.criteria-block {
+			width: 50%;
+			float: left;
+		}
+		.original-block {
+			width: 50%;
+			float: left;
+		}
+	}
+}
+
+
+// форма поиска "поисковый запрос:  ", форма регистрации
+div.at-wrapper div.at-center-content div.at-mainer div.at-main-content div.inner form div.form {
+	textarea,
+	input[type="password"],
+	input[type="text"] {
+		width: 90% !important;
+		max-width: 400px;
+	}
+}
+
+
+// стили для десктопа с маленьким разрешением
+@media (max-width: @screen-lg-desktop) {
+	
+	.search-links { display: none; }
+	
+	// 	Шапка сайта
+	.at-header .main-navigation-block .navigation-block-inner {
+		margin-left: 0;
+		margin-right: 0;
+		.search-section {
+			margin-left: 230px;
+			margin-right: 210px;
+			
+			.contact-info {
+				float: none;
+				> span {
+					margin-right: 10px;
+				}
+				br {
+					content: " ";
+					display: none;
+				}
+				.at-doc-block {
+					display: inline;
+					float: right;
+					margin: 0;
+				}
+				span, .at-doc-block, a {
+					font-size: 15px;
+					font-weight: normal;
+				}
+			}
+			.at-search {
+				float: none;
+				width: auto;
+				padding: 0;
+			}
+		}
+	}
+	.at-main-navigation table td .item .sub.sub-right,
+	.at-main-navigation table td:nth-last-child(3) .item .sub,
+	.at-main-navigation table td:nth-last-child(2) .item .sub,
+	.at-main-navigation table td:last-child .item .sub {
+		left: auto;
+		right: -1px;
+	}
+	
+	//  Подбор по модели автомобиля
+	.at-filter-action-layoot .filter-block .filter-inner label {
+		padding-left: 0;
+		> span {
+			width: 100px;
+			text-align: right;
+			padding-right: 5px;
+		}
+		#select_model_detail,
+		#select_model {
+			width: auto;
+			float: none;
+		}
+		select {
+			width: 70% !important;
+		}
+	}
+	
+	//  Категории на главной
+	.at-category-block .item {
+		width: 33%;
+		vertical-align: top;
+		@media (max-width: 1000px) {
+			width: 48%;
+		}
+	}
+
+}
+
+
+// стили для десктопа с очень маленьким разрешением или планшета
+@media (max-width: @screen-desktop) {
+	.at-head-navigation {
+		.user-profile a,
+		.secondary-navigation a {
+		    background: none;
+		    padding: 0 5px 0 0;
+		}
+		.language-navigation a {
+		    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+		    padding: 0 0 0 5px;
+		}
+		.secondary-navigation {
+			display: none;
+		}
+		.user-profile {
+			display: block;
+		}
+		
+	}
+
+	.at-header {
+		.logo {
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+		.at-mainer {
+			padding: 0;
+		}
+		.main-navigation-block .navigation-block-inner {
+			padding-top: 0;
+			.search-section {
+				margin-left: 10px;
+				.contact-info {
+					text-align: right;
+					margin-left: 230px;
+					padding: 0;
+					line-height: 23px;
+					margin-bottom: 10px;
+					min-height: 70px;
+					> span {
+						margin-right: 0;
+					}
+					.at-doc-block {
+						float: none;
+						display: block;
+						text-align: right;
+						a img { 
+							float: none; 
+							vertical-align: middle;
+						}
+					}
+				}
+				.at-search-from {
+					br {
+						content: " ";
+						display: none;
+					}
+					.you-search {
+						position: static;
+						float: right;
+						line-height: 18px;
+					}
+				}
+			}
+			.at-main-navigation {
+				padding: 0;
+				.inner-block {
+					padding: 0;
+					background-image: none;
+				}
+			}
+		}
+		
+	}
+	.at-mainer {
+		.at-side-bar {
+			float: none;
+			margin: 0 auto;
+			position: static;
+			padding: 0;
+			.user-login-block {
+				display: none;
+				position: absolute;
+				background: white;
+			    left: 0px;
+			    top: 36px;
+			    z-index: 1000;
+			    width: 200px;
+			}
+			> * {
+				display: none;
+			}
+		}
+		.at-main-content .inner {
+			padding-left: 0;
+			
+			.at-category-block .item {
+				margin: 10px 0;
+			}
+			.at-car-category .item {
+				width: 33%;
+			}
+		}
+	}
+	
+	.at-footer {
+		height: auto;
+		.footer-section {
+		    box-sizing: border-box;
+		    padding-left: 10px;
+		    width: 25%;
+	    }
+		.footer-section.at-partners-block {
+			float: none;
+			width: auto;
+			clear: both;
+			padding: 10px 0 0 0;
+			br {
+				content: " ";
+				display: none;
+			}			
+			.copy {
+				margin-right: 20px;
+			}
+		}
+	}
+	
+	// страница контакты с картой
+	.contact-form-box {
+		margin-left: -5px;
+		margin-right: -5px;
+		
+		input.form-control,
+		textarea.form-control {
+			box-sizing: border-box;
+			max-width: none;
+		}
+		.col-md-9,
+		.col-md-3 {
+			padding-right: 5px;
+			padding-left: 5px;
+		}	
+	}
+	
+	
+	// список товаров в корзине 
+	table.cart-table {
+		.cell-date {
+			display: none;
+		}
+	}
+	.order-package-btn {
+		display: none;
+	}
+
+	//http://irbis-mobile.mstarproject.com/cars/FIAT/DUCATO_c_bortovoy_platformoy_hodovaya_chast-5632/
+	.model-detail-table {
+		.cell-fuel {
+			display: none;
+		}
+	}	
+	
+}
+
+// стили для планшета
+@media (max-width: @screen-tablet) {
+	.at-header {
+		.logo {
+			width: 100px;
+			margin-right: 0;
+			img { width: 100%; }
+		}
+		
+		.main-navigation-block {
+			float: none;
+			.navigation-block-inner .search-section {
+				margin: 0 10px 0 0;
+				.contact-info {
+					margin-left: 125px;
+					min-height: 0;
+					> a {
+						display: none;	// TODO перенести только для мобильных
+					}
+				}
+			}
+		}
+		.main-navigation-block .navigation-block-inner {
+			.search-section {
+				.at-search {
+					margin-left: 10px;
+				}
+				.search-section .at-search-from br {
+					display: block;
+					content: none;
+				}
+			}
+			.at-main-navigation {
+				height: auto;
+				min-width: 1px;
+				.inner-block { // главное меню
+					display: none;
+					position: absolute;
+					left: 0;
+					top: 37px;
+					width: 100%;
+					z-index: 1000;
+
+					height: auto;
+					table, tbody, tr, td { 
+						display: block !important;
+// 						float: left; width: 100%; // FIX FOR IE
+						height: auto;
+						background-image: none;
+					}
+					table td:hover .sub {
+						display: none;
+					}
+					table td:hover .item  {
+					    background: inherit;
+					    border-radius: 0;
+					    a.level-0 {
+						    color: white;
+						}
+					}
+					.item {
+						a.level-0 {
+							display: block;
+							line-height: 32px;
+						}
+						.sub {
+							display: none;
+							position: static;
+							.part {
+								width: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+	// ссылки переключения языков - только флаги
+	.at-head-navigation .language-navigation a {
+		width: 20px;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	.at-head-navigation .cart-btn,
+	.at-head-navigation .menu-btn {
+		display: block;
+	}
+	
+	#cart_block { // корзина
+		padding: 0;
+		.at-caption { 
+			display: none;
+		}
+		.basket-warp {
+			display: none;
+			padding: 0;
+			margin: 0;
+			border: none;
+			position: absolute;
+			top: 37px;
+			right: 0;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+		}
+	}
+	
+	.at-filter-action-layoot {
+		.action-block {
+			display: none;
+		}
+		.filter-block .filter-inner {
+			margin-right: 0;
+		}
+	}
+	
+	.at-category-block .item { // категории на главной
+		width: 100%;
+	}
+	.item-fake { 
+		display: none !important;
+	}
+	.at-car-category {
+		.clearfix();
+	}
+	
+	.at-mainer .at-main-content .inner .at-car-category .item { //бренды на главной
+		float: left;
+		width: 50%;
+	}
+	
+	// http://irbis-mobile.mstarproject.com/price/BOSCH_0450904149/
+	.mobile-table {
+		th {
+			display: none;
+		}
+		tr {
+			background: url(data:image/gif;base64,R0lGODlhAQABAPAAAM3Nzf///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) top repeat-x;
+		}
+		
+		td {
+			display: block;
+			float: left;
+			border: none;
+		}
+	}
+	
+	
+	// всплывающее окно с фото запчасти
+	.bg-product-photo:hover .bg-photo-popup {
+		left: 0;
+	}
+	
+	.price-table td {
+		&.separator {
+			float: none;
+		}
+		&.cell-logo {
+			width: 80px;
+			margin-right: 10px;
+			img {
+				max-width: 100%;
+			}
+		}
+		&.cell-count {
+			float: right;
+			input {
+				width: 15px !important;
+			}
+		}
+		&.cell-buy {
+			float: right;
+		}
+		&.cell-photo {
+			clear: left;
+			float: left;
+			width: 20px;
+		}
+		&.cell-price {
+			float: right;
+			font-size: 16px;
+			min-width: 100px;
+			text-align: right;
+		}
+		&.cell-term {
+			display: none;
+		}
+		&.cell-code {
+			float: right;
+/*
+			&:before {
+				content: "#";
+			}
+*/
+		}
+		&.cell-title {
+// 				border-top: 1px solid #cdcdcd;
+			float: none;
+			font-size: 14px;
+		}
+	}
+	
+	// страница контакты с картой
+	.map-box {
+		.contacts-info-box {
+			position: static;
+			width: auto;
+			padding: 5px 0 20px 0;
+			p {
+				font-size: 15px;
+			}
+			.address-box, .mail, .phones-box {
+				margin: 10px 0 0 10px;
+			}
+		}
+// 		iframe { display: none; }
+	}
+	.contact-form-box {
+		input.form-control {
+			box-sizing: border-box;
+		}
+		.col-xs-12 {
+			width: 100%;
+		}	
+	}	
+
+	
+	// список товаров в корзине 
+	table.cart-table {
+		.cell-weight {
+			display: none;
+		}
+		.cell-action a {
+			display: block;
+		    overflow: hidden;
+		    width: 16px;
+		}
+	}
+	
+	//  поиск по названию
+	table.search-table {
+		.cell-stock {
+			display: none;
+		}
+		.cell-brand {
+			float: left;
+			margin-right: 10px;
+			font-style: italic;
+		}
+		.cell-code {
+			float: right;
+			margin-left: 20px;
+/*
+			&::before {
+				content: "#";
+			}
+*/
+		}
+		.cell-name {
+			float: none;
+			font-size: 14px;
+		}
+		.cell-term {
+			float: right;
+			margin-left: 20px;
+			&::before {
+				content: "Срок, дн: ";
+			}
+		}
+		.cell-number {
+			float: left;
+			clear: right;
+			&::before {
+				content: "Кол-во: ";
+			}
+		}
+		.cell-price {
+			float: right;
+			font-size: 16px;
+			b {
+				font-weight: normal !important;
+			}
+		}
+		.cell-action {
+			float: left;
+		}
+	}	
+	
+	 // каталог tecdoc
+	 .catalog-brands-table {
+		 border: none;
+	 	&.mobile-table tr {
+		 	background: none;
+		 	display: inline;
+		}
+		td.logo_brand {
+			width: 33.33%;
+			box-sizing: border-box;
+			border: none;
+			border-collapse: separate;
+		}
+	}
+	
+	//http://irbis-mobile.mstarproject.com/cars/FIAT/DUCATO_c_bortovoy_platformoy_hodovaya_chast-5632/
+	.model-detail-table {
+		.cell-name {
+			float: none;
+		}
+		.cell-years {
+			float: left;
+			&::after {
+				content: " г.в.;";
+			}
+		}
+		.cell-power-kw::after {
+			content: " kW;";
+		}
+		.cell-power-hp::after {
+			content: " л.с.;";
+		}
+		.cell-volume::after {
+			content: " см³; ";
+		}
+		.cell-body {
+			float: right;
+		}
+	}	
+	
+	// дерево http://irbis-mobile.mstarproject.com/cars/FIAT/FIAT_DUCATO_c_bortovoy_platformoy_hodovaya_chast_250_150_Multijet_3,0_D_150_Multijet_3,0_D-5632-9130/
+	.dtree {
+		&>.dtreeNode {
+			display: none;
+		}
+		.clip {
+			.dTreeNode {
+				margin: 10px 0;
+			}
+		}
+		
+	}
+
+	.tree-assemblage-table {
+		.left-col {
+			float: none;
+			width: auto;
+		}
+		.right-col {
+			float: none;
+			width: auto;
+		}
+	}
+	.row-part-table {
+		.cell-action {
+			width: 1%;
+		}
+		.cell-image {
+			text-align: center;
+			width: 1%;
+			.thickbox {
+				text-indent: -10000px;
+			    background: url("/image/design/icons.png") no-repeat scroll -185px -115px rgba(0, 0, 0, 0);
+			    cursor: pointer;
+			    display: inline-block;
+			    height: 13px;
+			    position: relative;
+			    vertical-align: middle;
+			    width: 16px;
+			}
+		}
+		.cell-price {
+			width: 1%;
+			input {
+				width: 15px;
+			}
+		}
+	}
+	.info-part {
+		.image-block {
+			width: 200px;
+			float: left;
+		}
+		.title-block {
+			margin-left: 210px;
+		}
+		.right-block {
+			.clearfix();
+			margin-left: 0;
+			.criteria-block {
+				margin-left: 210px;
+				width: auto;
+				float: none;
+			}
+			.original-block {
+				width: auto;
+				float: none;
+				clear: both;
+				table {
+					width: 100% !important;
+				}
+			}
+		}
+	}	
+
+
+	// форма поиска "поисковый запрос:  ", форма регистрации
+	div.at-wrapper div.at-center-content div.at-mainer div.at-main-content div.inner form div.form {
+		width: 100% !important;
+		textarea,
+		input[type="password"],
+		input[type="text"] {
+			width: 90% !important;
+			max-width: 400px;
+		}
+	}
+	
+	
+	// попап с инфо о производителе
+	.pt-popup-block .block {
+	    left: 10px;
+	    margin: 0;
+	    right: 10px;
+	    width: auto;
+	}
+
+}
+
+
+
+// стили для телефона
+@media (max-width: @screen-phone) {
+	
+	.at-header .main-navigation-block .navigation-block-inner .search-section .at-search-from br {
+		display: block;
+		content: normal;
+	}
+	
+	.at-filter-action-layoot .filter-block .filter-inner {
+		padding: 5px;
+		margin-bottom: 10px;
+		height: auto;
+		h2 { 
+			padding: 0; 
+			margin-bottom: 5px;
+		}
+		label {
+			margin: 0 0 5px 0;
+			span {
+				text-align: left;
+				display: block;
+				width: auto;
+				float: none;
+				padding: 0;
+			}
+			select {
+				width: 100% !important;
+			}
+		}
+	}
+	
+	.at-footer .footer-section {
+// 		float: none;
+		width: auto;
+		margin: 0 0 10px 10px;
+		padding: 0;
+		min-width: 130px;
+	}
+	// список товаров в корзине 
+	table.cart-table {
+		.cell-code {
+			display: none;
+		}
+
+	}	
+
+	// каталог tecdoc
+	 
+	.catalog-brands-table {
+		td.logo_brand {
+			width: 50%;
+			box-sizing: border-box;
+			border: none;
+			border-collapse: separate;
+		}
+	}
+	.row-part-table {
+		th {
+			display: none;
+		}
+		tr {
+			background: url(data:image/gif;base64,R0lGODlhAQABAPAAAM3Nzf///yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) top repeat-x;
+		}
+		
+		td {
+			display: block;
+			float: left;
+			border: none;
+		}
+		.cell-name {
+			float: none;
+			width: auto;
+		}	
+/*
+		.cell-code::before {
+			content: "#";
+		}
+*/
+		.cell-action {
+			width: auto;
+			float: right;
+		}
+
+		.cell-price {
+			width: 100px;
+			text-align: right;
+			float: right;
+			input {
+				width: 15px;
+			}
+		}
+	}
+	
+	
+	// регистрация
+	.registration-table {
+		width: 100%;
+		td {
+			display: block;
+			border: none;
+			width: auto;
+			textarea {
+				width: 90% !important;
+			}
+		}
+	}
+
+}
+
+
+
+
+@media (max-width: 1270px) {
+	.at-providers-block .element {
+		width: 100%;
+	}
+}
+@media (max-width: 600px) {
+	.at-providers-block .element,
+	.at-providers-block .element:first-child {
+		background-size: 40px;
+		padding-left: 75px;
+	}
+	.at-providers-block .element .title {
+		line-height: 23px;		
+	}
+}

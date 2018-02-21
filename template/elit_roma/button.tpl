@@ -1,0 +1,2 @@
+<button onclick="document.location='/pages/elit_roma_export/'; ">{$oLanguage->GetMessage('Export price')}</button>
+<button onclick="document.location='/pages/elit_roma_export_valid/'; ">{$oLanguage->GetMessage('Export price>0')}</button>

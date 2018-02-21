@@ -1,0 +1,127 @@
+/*--[-- manager panel --*/
+.fixed_block {
+	border:1px solid #D5D5D5;
+	margin-bottom:10px;
+	padding:10px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	background-color:#ffffff;
+	z-index:100;
+}
+
+ .block_cont {
+	border:1px solid #D5D5D5;
+	background-color:#EBEBEB;
+	padding:2px 10px 12px 10px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	margin-top:10px;
+}
+
+.fixed_block .toggle_link {
+	font-size:14px;
+	color:#48637D;
+	font-family:Tahoma, Arial;
+	background:url('/image/design/f_up.png') top right no-repeat;
+	padding-right:15px;
+}
+
+.fixed_block .selected {
+	background:url('/image/design/f_down.png') top right no-repeat;
+}
+
+.fixed_block .selected {
+	background:url('/image/design/f_down.png') top right no-repeat;
+}
+
+.fixed_block .items {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.fixed_block .items li {
+	float:left;
+	margin:0 3px 0 0;
+	padding-bottom:3px;
+	position:relative;
+}
+
+.fixed_block .items li ul {
+	position:absolute;
+	list-style:none;
+	padding:0;
+	margin:0;
+	background-color:#ffffff;
+	border:1px solid #C0C0C0;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	display:none;
+	position:absolute;
+	top:25px;
+	left:0;
+	z-index: 10;
+}
+
+.fixed_block .items li:hover ul {
+	display:block;
+}
+
+.fixed_block .items li ul li {
+	float:none;
+	margin:0;
+	white-space:nowrap;
+}
+
+.fixed_block .items li ul li a {
+	padding:2px 12px;
+	display:block;
+	text-decoration:none;
+	min-width:100px;
+	color:#555555;
+}
+
+.fixed_block .items li ul li a:hover {
+	background-color:#EAEAEA;
+}
+
+.fixed_block_here {
+	height:104px;
+}
+
+.gl_button {
+	background:url('/image/design/gl_button_l.png') no-repeat;
+	display:inline-block;
+	/*display:inline;*/
+	zoom:1;
+	text-decoration:none;
+	margin-right:3px;
+	text-shadow:#678496 1px 1px 0;
+	color:#ffffff !important;
+}
+.gl_button span {
+	background:url('/image/design/gl_button_r.png') top right no-repeat;
+	line-height:23px;
+	display:inline-block;
+	/*display:inline;*/
+	zoom:1;
+	padding:0 12px;
+	margin-right:-3px;
+	cursor:pointer;
+}
+
+.gl_button:hover span {
+	text-decoration:underline;
+}
+
+
+.gl_input {
+	border:1px solid #2774a2;
+	/*color:#acacac;*/
+	padding:2px 7px 3px 7px;
+	background:url('/image/design/gl_input_bg.png') repeat-x;
+}
+/*--]-- manager panel --*/

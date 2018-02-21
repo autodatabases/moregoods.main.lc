@@ -1,0 +1,2 @@
+<input type="text" maxlength="5" name="table_{$sCol}_{$iRowId}" value="{$sValue}"
+onkeyup="xajax_process_browse_url('/?action=store_update_number&table={$sTable}&col={$sCol}&row={$iRowId}&number='+this.value); return false;">

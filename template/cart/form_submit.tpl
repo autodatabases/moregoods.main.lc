@@ -1,0 +1,2 @@
+<input type=hidden id="error_auto" value="{$error_field_auto}">
+<input type=button class='{$sSubmitButtonClass}' value="{$oLanguage->getMessage("Update and pay")}"  onclick="cart_shipment_submit(this);">

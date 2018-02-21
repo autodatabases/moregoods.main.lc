@@ -1,0 +1,64 @@
+# - svn folder hide -
+RewriteEngine on
+RewriteRule .*\.svn/.* - [F]
+RewriteBase /
+
+
+
+# if rewrite all url in small
+#RewriteCond %{REQUEST_URI} ^[^A-Z]*[A-Z].*
+#RewriteRule ^ ${lc:%{REQUEST_URI}} [L,R=301]
+# ---------------
+
+Options -Indexes
+
+#deny from all
+
+#php_value register_globals 0
+ErrorDocument 404 /?action=missing
+
+RewriteRule ^robots.txt$ /imgbank/Image/seo/robots.txt
+
+# AT-281 multilingual subdomains
+RewriteCond %{REQUEST_URI} !^/[^\/]+.(.*)
+RewriteCond %{HTTP_HOST} ^(ru)\.moregoods\.(.*)$
+RewriteCond %{QUERY_STRING} !(.*)locale(.*)
+RewriteRule ^(.*)$ /?locale=%1&%{QUERY_STRING}
+
+RewriteCond %{HTTP_HOST} ^www.obriy.mstarproject.com$ [OR]
+RewriteCond %{HTTP_HOST} ^obriy.mstarproject.com$ 
+RewriteRule ^(.*)$ http://moregoods.com.ua/$1 [R=301,L]  
+
+# ALT-152
+RewriteRule ^select(\/{0,1})$ /?action=price_group [QSA,L]
+RewriteRule ^select/([\w+\s-]+)/sort=(.*)/way=(.*)$ /?action=price_group&category=$1&sort=$2&way=$3 [QSA,L]
+RewriteRule ^select/([\w+\s-]+)(\/{0,1})$ /?action=price_group&category=$1 [QSA,L]
+RewriteRule ^select/([\w+\s-]+)/([\w+\s-.]+)/sort=(.*)/way=(.*)$ /?action=price_group&category=$1&brand=$2&sort=$3&way=$4 [QSA,L]
+RewriteRule ^select/([\w+\s-]+)/([\w+\s-.]+)(\/{0,1})$ /?action=price_group&category=$1&brand=$2 [QSA,L]
+RewriteRule ^select/([\w+\s-]+)/([\w+\s-.]+)/([0-9]+)/sort=(.*)/way=(.*)$ /?action=price_group&category=$1&brand=$2&step=$3&sort=$4&way=$5 [QSA,L]
+RewriteRule ^select/([\w+\s-]+)/([\w+\s-.]+)/([0-9]+)(\/{0,1})$ /?action=price_group&category=$1&brand=$2&step=$3 [QSA,L]
+
+
+# AT-617
+RewriteRule ^pages/([a-zA-Z0-9_-]+)\/{0,1}$ /?action=$1 [QSA,L]
+RewriteRule ^pages/(news)\/_?([^\/]+)\/{0,1}$ /?action=news_preview&id=$2 [QSA,L]
+
+RewriteRule ^(price)\/([\w+\s-\.]+)_([a-zA-Z0-9-\s\.,:\"\[\]\(\)\*\+\`\']+)\/{0,1}$ /?action=catalog_price_view&name=$2&code=$3 [QSA]
+RewriteRule ^(price)\/([\w+\s-\.]+)_([a-zA-Z0-9-\s\.,:\"\[\]\(\)\*\+\`\']+)/sort=(.*)/way=(.*)$ /?action=catalog_price_view&name=$2&code=$3&sort=$4&way=$5 [QSA,L]
+RewriteRule ^(price)\/_?([^\/]+)/sort=(.*)/way=(.*)$ /?action=catalog_price_view&code=$2&sort=$3&way=$4 [QSA,L]
+RewriteRule ^(price)\/_?([^\/]+)\/{0,1}$ /?action=catalog_price_view&code=$2 [QSA,L]
+
+RewriteRule ^(buy)\/([\w+\s-\.]+)_([a-zA-Z0-9-\s\.,:\"\[\]\(\)\*\+\`\']+)/sort=(.*)/way=(.*)$ /?action=catalog_part_info_view&cat_name=$2&code=$3&sort=$4&way=$5 [QSA,L]
+RewriteRule ^(buy)\/([\w+\s-\.]+)_([a-zA-Z0-9-\s\.,:\"\[\]\(\)\*\+\`\']+)\/{0,1}$ /?action=catalog_part_info_view&cat_name=$2&code=$3 [QSA,L]
+RewriteRule ^([bB]{1}[uU]{1}[yY]{1})\/([\w+\s-\.]+)_([^\/]+)/sort=(.*)/way=(.*)$ /buy/$2_$3/sort=$4/way=$5/ [R=301,L]
+RewriteRule ^([bB]{1}[uU]{1}[yY]{1})\/([\w+\s-\.]+)_([^\/]+)_([0-9]+)\/{0,1}$ /buy/$2_$3/ [R=301,L]
+RewriteRule ^([bB]{1}[uU]{1}[yY]{1})\/([\w+\s-\.]+)_([^\/]+)\/{0,1}$ /buy/$2_$3/ [R=301,L]
+
+RewriteRule ^search_text\/([^~\/]+)/sort=(.*)/way=(.*)$ /?action=search&search[query]=$1&sort=$2&way=$3 [QSA,L]
+RewriteRule ^search_text\/([^~\/]+)\/{0,1}$ /?action=search&search[query]=$1
+RewriteRule ^search_text\/([^~]+)~(\-?[0-9]+)\/{0,1}$ /?action=search&search[query]=$1&search[id_price_group]=$2
+
+RewriteRule administrator /mpanel/main.php [QSA,L]
+
+#это чтобы спрятать
+ErrorDocument 403 /?action=missing

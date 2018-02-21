@@ -1,0 +1,1 @@
+<input type="button" value="{$oLanguage->GetMessage('add')}" onclick="document.location='/pages/store_products_add/'">

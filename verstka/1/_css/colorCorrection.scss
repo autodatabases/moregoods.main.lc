@@ -1,0 +1,1075 @@
+$colorBrandDecoBg: #b18dbf;
+$colorBrandDeco: #813e9d;
+$colorTextFooterDeco: #999999;
+
+$colorBrandChildBg: #efcbdc;
+$colorBrandChild: #e399bc;
+$colorTextFooterChild: #999999;
+
+$colorBrandHomeBg: #85bae6;
+$colorBrandHome: #0f75cb;
+$colorTextFooterHome: #999999;
+
+$colorBrandCosmeticBg: #9ac78d;
+$colorBrandCosmetic: #9ac78d;
+$colorTextFooterCosmetic: #999999;
+
+$colorBrandProductBg: #d7c3a4;
+$colorBrandProduct: #ffa92d;
+$colorTextFooterProduct: #999999;
+
+body.deco {
+    .gm-button {
+        background-color: $colorBrandDeco;
+
+        &:hover {
+            background-color: lighten($colorBrandDeco, 10%);
+        }
+
+        &:active {
+            background-color: darken($colorBrandDeco, 2%);
+        }
+    }
+    .gm-block-brand-color {
+        background-color: $colorBrandDecoBg;
+    }
+
+    .gm-block-header {
+        .block-search {
+            input[type="submit"] {
+                background-position: -64px -96px;
+            }
+        }
+
+        .block-auth {
+            a {
+                color: $colorBrandDeco;
+            }
+
+            .link-favorite {
+                background-position: -96px -158px;
+            }
+
+            .link-basket {
+                background-position: -127px -96px;
+            }
+        }
+    }
+
+    .gm-block-category-nav {
+        box-shadow: 0 0 5px #855996;
+
+        .sub {
+            .child-element {
+                .name {
+                    color: $colorBrandDeco;
+                }
+            }
+        }
+    }
+
+    .gm-block-footer {
+        border-color: $colorBrandDeco;
+        background-image: url("../_images/footer-bg-child.png");
+        background-color: #fcfaf6;
+
+        .block-social {
+            background-position: -160px -96px;
+        }
+
+        .block-logo {
+            .date {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-textpages {
+            a {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-madeby {
+            .irbis {
+                background-position: -352px -32px;
+            }
+
+            color: $colorTextFooterDeco;
+        }
+    }
+
+    .gm-block-category-nav {
+        ul {
+            > li.selected {
+                > a {
+                    color: $colorBrandDeco;
+
+                    &:before {
+                        background-color: $colorBrandDeco;
+                    }
+                }
+            }
+        }
+    }
+
+    .gm-banner-index {
+        .slick-dots {
+            .slick-active {
+                background-color: #ffffff;
+
+                button {
+                    background: $colorImportant;
+                }
+            }
+        }
+    }
+
+    .gm-portal-menu {
+        > ul ul a {
+            color: $colorBrandDeco;
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-view {
+            a.selected::before {
+                background-color: $colorBrandDeco;
+            }
+        }
+    }
+
+    .gm-block-stepper {
+        .pages {
+            a {
+                color: $colorBrandDeco;
+            }
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-filter {
+            a {
+                color: $colorBrandDeco;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            label {
+                a:hover {
+                    color: $colorBrandDeco;
+                }
+            }
+        }
+    }
+
+    .gm-product-thumb-element,
+    .gm-product-view .block-info,
+    .gm-product-list-element {
+        .options {
+            a:hover,
+            a.selected {
+                color: $colorBrandDeco;
+                border-color: $colorBrandDeco;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            .link-clear {
+                a {
+                    color: $colorBrandDeco;
+                }
+            }
+        }
+    }
+
+    .gm-icon-buy {
+        &:before {
+            background-position: -128px -96px;
+        }
+
+        &:hover {
+            background-color: lighten($colorBrandDeco, 10%);
+            border-color: lighten($colorBrandDeco, 10%);
+        }
+
+        &:active,
+        &.already {
+            background-color: darken($colorBrandDeco, 2%);
+            border-color: darken($colorBrandDeco, 2%);
+        }
+    }
+
+    .gm-filter-values {
+        .gm-link-dashed {
+            color: $colorBrandDeco;
+        }
+    }
+
+    .gm-product-view {
+        .block-images {
+            .small {
+                .slick-current {
+                    border-color: $colorBrandDeco;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakpointDesktop + 20){
+        .gm-block-header {
+            border-color: $colorBrandDeco;
+        }
+    }
+}
+
+body.child {
+    .gm-button {
+        background-color: $colorBrandChild;
+
+        &:hover {
+            background-color: lighten($colorBrandChild, 10%);
+        }
+
+        &:active {
+            background-color: darken($colorBrandChild, 2%);
+        }
+    }
+    .gm-block-brand-color {
+        background-color: $colorBrandChildBg;
+    }
+
+    .gm-block-header {
+        .block-search {
+            input[type="submit"] {
+                background-position: -64px -128px;
+            }
+        }
+
+        .block-auth {
+            a {
+                color: $colorBrandChild;
+            }
+
+            .link-favorite {
+                background-position: -96px -190px;
+            }
+
+            .link-basket {
+                background-position: -127px -160px;
+            }
+        }
+    }
+
+    .gm-block-category-nav {
+        box-shadow: 0 0 5px #c3809f;
+
+        .sub {
+            .child-element {
+                .name {
+                    color: $colorBrandChild;
+                }
+            }
+        }
+    }
+
+    .gm-block-footer {
+        border-color: $colorBrandChild;
+        background-image: url("../_images/footer-bg-child.png");
+        background-color: #fcfaf6;
+
+        .block-social {
+            background-position: -160px -192px;
+        }
+
+        .block-logo {
+            .date {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-textpages {
+            a {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-madeby {
+            .irbis {
+                background-position: -352px -32px;
+            }
+
+            color: $colorTextFooterDeco;
+        }
+    }
+
+    .gm-block-category-nav {
+        ul {
+            > li.selected {
+                > a {
+                    color: $colorBrandChild;
+
+                    &:before {
+                        background-color: $colorBrandChild;
+                    }
+                }
+            }
+        }
+    }
+
+    .gm-banner-index {
+        .slick-dots {
+            .slick-active {
+                background-color: #ffffff;
+
+                button {
+                    background: $colorImportant;
+                }
+            }
+        }
+    }
+
+    .gm-portal-menu {
+        > ul ul a {
+            color: $colorBrandChild;
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-view {
+            a.selected::before {
+                background-color: $colorBrandChild;
+            }
+        }
+    }
+
+    .gm-block-stepper {
+        .pages {
+            a {
+                color: $colorBrandChild;
+            }
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-filter {
+            a {
+                color: $colorBrandChild;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            label {
+                a:hover {
+                    color: $colorBrandChild;
+                }
+            }
+        }
+    }
+
+    .gm-product-thumb-element,
+    .gm-product-view .block-info,
+    .gm-product-list-element {
+        .options {
+            a:hover,
+            a.selected {
+                color: $colorBrandChild;
+                border-color: $colorBrandChild;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            .link-clear {
+                a {
+                    color: $colorBrandChild;
+                }
+            }
+        }
+    }
+
+    .gm-icon-buy {
+        &:before {
+            background-position: -128px -160px;
+        }
+
+        &:hover {
+            background-color: lighten($colorBrandChild, 10%);
+            border-color: lighten($colorBrandChild, 10%);
+        }
+
+        &:active,
+        &.already {
+            background-color: darken($colorBrandChild, 2%);
+            border-color: darken($colorBrandChild, 2%);
+        }
+    }
+
+    .gm-filter-values {
+        .gm-link-dashed {
+            color: $colorBrandChild;
+        }
+    }
+
+    .gm-product-view {
+        .block-images {
+            .small {
+                .slick-current {
+                    border-color: $colorBrandChild;
+                }
+            }
+        }
+    }
+
+    .gm-block-crumbs {
+        color: #ffffff;
+    }
+
+    @media screen and (max-width: $breakpointDesktop + 20){
+        .gm-block-header {
+            border-color: $colorBrandChild;
+        }
+    }
+}
+
+body.home {
+    .gm-button {
+        background-color: $colorBrandHome;
+
+        &:hover {
+            background-color: lighten($colorBrandHome, 10%);
+        }
+
+        &:active {
+            background-color: darken($colorBrandHome, 2%);
+        }
+    }
+    .gm-block-brand-color {
+        background-color: $colorBrandHomeBg;
+    }
+
+    .gm-block-header {
+        .block-search {
+            input[type="submit"] {
+                background-position: -64px -160px;
+            }
+        }
+
+        .block-auth {
+            a {
+                color: $colorBrandHome;
+            }
+
+            .link-favorite {
+                background-position: -96px -222px;
+            }
+
+            .link-basket {
+                background-position: -127px -192px;
+            }
+        }
+    }
+
+    .gm-block-category-nav {
+        box-shadow: 0 0 5px #548cba;
+
+        .sub {
+            .child-element {
+                .name {
+                    color: $colorBrandHome;
+                }
+            }
+        }
+    }
+
+    .gm-block-footer {
+        border-color: $colorBrandHome;
+        background-image: url("../_images/footer-bg-child.png");
+        background-color: #fcfaf6;
+
+        .block-social {
+            background-position: -160px -288px;
+        }
+
+        .block-logo {
+            .date {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-textpages {
+            a {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-madeby {
+            .irbis {
+                background-position: -352px -32px;
+            }
+
+            color: $colorTextFooterDeco;
+        }
+    }
+
+    .gm-block-category-nav {
+        ul {
+            > li.selected {
+                > a {
+                    color: $colorBrandHome;
+
+                    &:before {
+                        background-color: $colorBrandHome;
+                    }
+                }
+            }
+        }
+    }
+
+    .gm-banner-index {
+        .slick-dots {
+            .slick-active {
+                background-color: #ffffff;
+
+                button {
+                    background: $colorImportant;
+                }
+            }
+        }
+    }
+
+    .gm-portal-menu {
+        > ul ul a {
+            color: $colorBrandHome;
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-view {
+            a.selected::before {
+                background-color: $colorBrandHome;
+            }
+        }
+    }
+
+    .gm-block-stepper {
+        .pages {
+            a {
+                color: $colorBrandHome;
+            }
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-filter {
+            a {
+                color: $colorBrandHome;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            label {
+                a:hover {
+                    color: $colorBrandHome;
+                }
+            }
+        }
+    }
+
+    .gm-product-thumb-element,
+    .gm-product-view .block-info,
+    .gm-product-list-element {
+        .options {
+            a:hover,
+            a.selected {
+                color: $colorBrandHome;
+                border-color: $colorBrandHome;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            .link-clear {
+                a {
+                    color: $colorBrandHome;
+                }
+            }
+        }
+    }
+
+    .gm-icon-buy {
+        &:before {
+            background-position: -128px -192px;
+        }
+
+        &:hover {
+            background-color: lighten($colorBrandHome, 10%);
+            border-color: lighten($colorBrandHome, 10%);
+        }
+
+        &:active,
+        &.already {
+            background-color: darken($colorBrandHome, 2%);
+            border-color: darken($colorBrandHome, 2%);
+        }
+    }
+
+    .gm-filter-values {
+        .gm-link-dashed {
+            color: $colorBrandHome;
+        }
+    }
+
+    .gm-product-view {
+        .block-images {
+            .small {
+                .slick-current {
+                    border-color: $colorBrandHome;
+                }
+            }
+        }
+    }
+
+    .gm-block-crumbs {
+        color: #ffffff;
+    }
+
+    @media screen and (max-width: $breakpointDesktop + 20){
+        .gm-block-header {
+            border-color: $colorBrandHome;
+        }
+    }
+}
+
+body.cosmetic {
+    .gm-button {
+        background-color: $colorBrandCosmetic;
+
+        &:hover {
+            background-color: lighten($colorBrandCosmetic, 10%);
+        }
+
+        &:active {
+            background-color: darken($colorBrandCosmetic, 2%);
+        }
+    }
+    .gm-block-brand-color {
+        background-color: $colorBrandCosmeticBg;
+    }
+
+    .gm-block-header {
+        .block-search {
+            input[type="submit"] {
+                background-position: -64px -192px;
+            }
+        }
+
+        .block-auth {
+            a {
+                color: $colorBrandCosmetic;
+            }
+
+            .link-favorite {
+                background-position: -96px -254px;
+            }
+
+            .link-basket {
+                background-position: -127px -224px;
+            }
+        }
+    }
+
+    .gm-block-category-nav {
+        box-shadow: 0 0 5px #599b45;
+
+        .sub {
+            .child-element {
+                .name {
+                    color: $colorBrandCosmetic;
+                }
+            }
+        }
+    }
+
+    .gm-block-footer {
+        border-color: $colorBrandCosmetic;
+        background-image: url("../_images/footer-bg-child.png");
+        background-color: #fcfaf6;
+
+        .block-social {
+            background-position: -160px -384px;
+        }
+
+        .block-logo {
+            .date {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-textpages {
+            a {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-madeby {
+            .irbis {
+                background-position: -352px -32px;
+            }
+
+            color: $colorTextFooterDeco;
+        }
+    }
+
+    .gm-block-category-nav {
+        ul {
+            > li.selected {
+                > a {
+                    color: $colorBrandCosmetic;
+
+                    &:before {
+                        background-color: $colorBrandCosmetic;
+                    }
+                }
+            }
+        }
+    }
+
+    .gm-banner-index {
+        .slick-dots {
+            .slick-active {
+                background-color: #ffffff;
+
+                button {
+                    background: $colorImportant;
+                }
+            }
+        }
+    }
+
+    .gm-portal-menu {
+        > ul ul a {
+            color: $colorBrandCosmetic;
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-view {
+            a.selected::before {
+                background-color: $colorBrandCosmetic;
+            }
+        }
+    }
+
+    .gm-block-stepper {
+        .pages {
+            a {
+                color: $colorBrandCosmetic;
+            }
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-filter {
+            a {
+                color: $colorBrandCosmetic;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            label {
+                a:hover {
+                    color: $colorBrandCosmetic;
+                }
+            }
+        }
+    }
+
+    .gm-product-thumb-element,
+    .gm-product-view .block-info,
+    .gm-product-list-element {
+        .options {
+            a:hover,
+            a.selected {
+                color: $colorBrandCosmetic;
+                border-color: $colorBrandCosmetic;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            .link-clear {
+                a {
+                    color: $colorBrandCosmetic;
+                }
+            }
+        }
+    }
+
+    .gm-icon-buy {
+        &:before {
+            background-position: -128px -224px;
+        }
+
+        &:hover {
+            background-color: lighten($colorBrandCosmetic, 10%);
+            border-color: lighten($colorBrandCosmetic, 10%);
+        }
+
+        &:active,
+        &.already {
+            background-color: darken($colorBrandCosmetic, 2%);
+            border-color: darken($colorBrandCosmetic, 2%);
+        }
+    }
+
+    .gm-filter-values {
+        .gm-link-dashed {
+            color: $colorBrandCosmetic;
+        }
+    }
+
+    .gm-product-view {
+        .block-images {
+            .small {
+                .slick-current {
+                    border-color: $colorBrandCosmetic;
+                }
+            }
+        }
+    }
+
+    .gm-block-crumbs {
+        color: #ffffff;
+    }
+
+    @media screen and (max-width: $breakpointDesktop + 20){
+        .gm-block-header {
+            border-color: $colorBrandCosmetic;
+        }
+    }
+}
+
+body.product {
+    .gm-button {
+        background-color: $colorBrandProductBg;
+
+        &:hover {
+            background-color: lighten($colorBrandProductBg, 10%);
+        }
+
+        &:active {
+            background-color: darken($colorBrandProductBg, 2%);
+        }
+    }
+    .gm-block-brand-color {
+        background-color: $colorBrandProductBg;
+    }
+
+    .gm-block-header {
+        .block-search {
+            input[type="submit"] {
+                background-position: -64px -224px;
+            }
+        }
+
+        .block-auth {
+            a {
+                color: $colorBrandProduct;
+            }
+
+            .link-favorite {
+                background-position: -96px -286px;
+            }
+
+            .link-basket {
+                background-position: -127px -256px;
+            }
+        }
+    }
+
+    .gm-block-category-nav {
+        box-shadow: 0 0 5px #beaa8b;
+
+        .sub {
+            .child-element {
+                .name {
+                    color: $colorBrandProduct;
+                }
+            }
+        }
+    }
+
+    .gm-block-footer {
+        border-color: $colorBrandProductBg;
+        background-image: url("../_images/footer-bg-child.png");
+        background-color: #fcfaf6;
+
+        .block-social {
+            background-position: -160px -480px;
+        }
+
+        .block-logo {
+            .date {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-textpages {
+            a {
+                color: $colorTextFooterDeco;
+            }
+        }
+
+        .block-madeby {
+            .irbis {
+                background-position: -352px -32px;
+            }
+
+            color: $colorTextFooterDeco;
+        }
+    }
+
+    .gm-block-category-nav {
+        ul {
+            > li.selected {
+                > a {
+                    color: $colorBrandProduct;
+
+                    &:before {
+                        background-color: $colorBrandProductBg;
+                    }
+                }
+            }
+        }
+    }
+
+    .gm-banner-index {
+        .slick-dots {
+            .slick-active {
+                background-color: #ffffff;
+
+                button {
+                    background: $colorImportant;
+                }
+            }
+        }
+    }
+
+    .gm-portal-menu {
+        > ul ul a {
+            color: $colorBrandProduct;
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-view {
+            a.selected::before {
+                background-color: $colorBrandProductBg;
+            }
+        }
+    }
+
+    .gm-block-stepper {
+        .pages {
+            a {
+                color: $colorBrandProduct;
+            }
+        }
+    }
+
+    .gm-productlist-wrap {
+        .block-filter {
+            a {
+                color: $colorBrandProduct;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            label {
+                a:hover {
+                    color: $colorBrandProduct;
+                }
+            }
+        }
+    }
+
+    .gm-product-thumb-element,
+    .gm-product-view .block-info,
+    .gm-product-list-element {
+        .options {
+            a:hover,
+            a.selected {
+                color: $colorBrandProduct;
+                border-color: $colorBrandProduct;
+            }
+        }
+    }
+
+    .gm-block-filter {
+        .filter-element {
+            .link-clear {
+                a {
+                    color: $colorBrandProduct;
+                }
+            }
+        }
+    }
+
+    .gm-icon-buy {
+        &:before {
+            background-position: -128px -256px;
+        }
+
+        &:hover {
+            background-color: lighten($colorBrandProductBg, 10%);
+            border-color: lighten($colorBrandProductBg, 10%);
+        }
+
+        &:active,
+        &.already {
+            background-color: darken($colorBrandProductBg, 2%);
+            border-color: darken($colorBrandProductBg, 2%);
+        }
+    }
+
+    .gm-filter-values {
+        .gm-link-dashed {
+            color: $colorBrandProduct;
+        }
+    }
+
+    .gm-product-view {
+        .block-images {
+            .small {
+                .slick-current {
+                    border-color: $colorBrandProduct;
+                }
+            }
+        }
+    }
+
+    .gm-block-crumbs {
+        color: #ffffff;
+    }
+
+    @media screen and (max-width: $breakpointDesktop + 20){
+        .gm-block-header {
+            border-color: $colorBrandProduct;
+        }
+    }
+}

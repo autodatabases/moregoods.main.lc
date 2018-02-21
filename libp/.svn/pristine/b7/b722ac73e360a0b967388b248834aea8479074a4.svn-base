@@ -1,0 +1,201 @@
+<!--
+ * FCKeditor - The text editor for internet
+ * Copyright (C) 2003-2005 Frederico Caldeira Knabben
+ *
+ * Licensed under the terms of the GNU Lesser General Public License:
+ * 		http://www.opensource.org/licenses/lgpl-license.php
+ *
+ * For further information visit:
+ * 		http://www.fckeditor.net/
+ *
+ * "Support Open Source software. What about a donation today?"
+ *
+ * File Name: frmresourceslist.html
+ * 	This page shows all resources available in a folder in the File Browser.
+ *
+ * File Authors:
+ * 		Frederico Caldeira Knabben (fredck@fckeditor.net)
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<link href="browser.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="js/common.js"></script>
+		<script language="javascript">
+
+		var oListManager = new Object() ;
+
+		oListManager.Init = function()
+		{
+			this.Table = document.getElementById('tableFiles') ;
+		}
+
+		oListManager.Clear = function()
+		{
+			// Remove all other rows available.
+			while ( this.Table.rows.length > 0 )
+			this.Table.deleteRow(0) ;
+		}
+
+		oListManager.AddFolder = function( folderName, folderPath )
+		{
+			// Create the new row.
+			var oRow = this.Table.insertRow(-1) ;
+
+			// Build the link to view the folder.
+			var sLink = '<a href="#" onclick="OpenFolder(\'' + folderPath + '\');return false;">' ;
+
+			// Add the folder icon cell.
+			var oCell = oRow.insertCell(-1) ;
+			oCell.width = 16 ;
+			oCell.innerHTML = sLink + '<img alt="" src="images/Folder.gif" width="16" height="16" border="0"></a>' ;
+
+			// Add the folder name cell.
+			oCell = oRow.insertCell(-1) ;
+			oCell.noWrap = true ;
+			oCell.colSpan = 2 ;
+			oCell.innerHTML = '&nbsp;' + sLink + folderName + '</a>' ;
+
+			// Add the delete folder cell.
+			oCell = oRow.insertCell(-1) ;
+			oCell.noWrap = true ;
+			oCell.align = 'right' ;
+			oCell.width = 50 ;
+			oCell.innerHTML = '<a href="#" onclick="DeleteFolder(\'' + folderName + '\');return false;">Delete</a>' ;
+
+		}
+
+		oListManager.AddFile = function( fileName, fileUrl, fileSize )
+		{
+			// Create the new row.
+			var oRow = this.Table.insertRow(-1) ;
+
+			// Build the link to view the folder.
+			var sLink = '<a href="#" onclick="OpenFile(\'' + fileUrl + '\');return false;">' ;
+
+			// Get the file icon.
+			var sIcon = oIcons.GetIcon( fileName ) ;
+
+			// Add the file icon cell.
+			var oCell = oRow.insertCell(-1) ;
+			oCell.width = 16 ;
+			oCell.innerHTML = sLink + '<img alt="" src="images/icons/' + sIcon + '.gif" width="16" height="16" border="0"></a>' ;
+
+			// Add the file name cell.
+			oCell = oRow.insertCell(-1) ;
+			oCell.innerHTML = '&nbsp;' + sLink + fileName + '</a>' ;
+
+			// Add the file size cell.
+			oCell = oRow.insertCell(-1) ;
+			oCell.noWrap = true ;
+			oCell.align = 'right' ;
+			oCell.innerHTML = '&nbsp;' + fileSize + ' KB' ;
+
+			// Add the delete file cell.
+			oCell = oRow.insertCell(-1) ;
+			oCell.noWrap = true ;
+			oCell.align = 'right' ;
+			oCell.width = 50 ;
+			oCell.innerHTML = '<a href="#" onclick="DeleteFile(\'' + fileUrl + '\');return false;">Delete</a>' ;
+
+		}
+
+		function OpenFolder( folderPath )
+		{
+			// Load the resources list for this folder.
+			window.parent.frames['frmFolders'].LoadFolders( folderPath ) ;
+		}
+
+		function GetUrlParam( paramName )
+		{
+			var oRegex = new RegExp( '[\?&]' + paramName + '=([^&]+)', 'i' ) ;
+			var oMatch = oRegex.exec( window.top.location.search ) ;
+
+			if ( oMatch && oMatch.length > 1 )
+			return oMatch[1] ;
+			else
+			return '' ;
+		}
+
+		function OpenFile( fileUrl )
+		{
+			var return_id = GetUrlParam( 'return_id' ) ;
+			if (fileUrl.substring(fileUrl.length-3,fileUrl.length)=='pdf') {
+				window.top.opener.ChangeImageURL( return_id , fileUrl ,'../images/pdf.png') ;
+			}
+			else window.top.opener.ChangeImageURL( return_id , fileUrl, '') ;
+			window.top.close() ;
+		}
+
+		function DeleteFile( fileUrl )
+		{
+			if (confirm("Are you sure you want do delete the file?"))
+			oConnector.SendCommand( 'DeleteFile', 'fileUrl=' + escape( fileUrl ), DeleteCallBack ) ;
+		}
+
+		function DeleteFolder( folderPath )
+		{
+			if (confirm("Are you sure you want do delete the folder?"))
+			oConnector.SendCommand( 'DeleteFolder', 'folderPath=' + escape( folderPath ), DeleteCallBack ) ;
+		}
+
+
+		function DeleteCallBack( fckXml )
+		{
+			if ( oConnector.CheckError( fckXml ) == 0 )
+			window.parent.frames['frmResourcesList'].Refresh();
+		}
+
+		function LoadResources( resourceType, folderPath )
+		{
+			oListManager.Clear() ;
+			oConnector.ResourceType = resourceType ;
+			oConnector.CurrentFolder = folderPath
+			oConnector.SendCommand( 'GetFoldersAndFiles', null, GetFoldersAndFilesCallBack ) ;
+		}
+
+		function Refresh()
+		{
+			LoadResources( oConnector.ResourceType, oConnector.CurrentFolder ) ;
+		}
+
+		function GetFoldersAndFilesCallBack( fckXml )
+		{
+			if ( oConnector.CheckError( fckXml ) != 0 )
+			return ;
+
+			// Get the current folder path.
+			var oNode = fckXml.SelectSingleNode( 'Connector/CurrentFolder' ) ;
+			var sCurrentFolderPath	= oNode.attributes.getNamedItem('path').value ;
+			var sCurrentFolderUrl	= oNode.attributes.getNamedItem('url').value ;
+
+			// Add the Folders.
+			var oNodes = fckXml.SelectNodes( 'Connector/Folders/Folder' ) ;
+			for ( var i = 0 ; i < oNodes.length ; i++ )
+			{
+				var sFolderName = oNodes[i].attributes.getNamedItem('name').value ;
+				oListManager.AddFolder( sFolderName, sCurrentFolderPath + sFolderName + "/" ) ;
+			}
+
+			// Add the Files.
+			var oNodes = fckXml.SelectNodes( 'Connector/Files/File' ) ;
+			for ( var i = 0 ; i < oNodes.length ; i++ )
+			{
+				var sFileName = oNodes[i].attributes.getNamedItem('name').value ;
+				var sFileSize = oNodes[i].attributes.getNamedItem('size').value ;
+				oListManager.AddFile( sFileName, sCurrentFolderUrl + sFileName, sFileSize ) ;
+			}
+		}
+
+		window.onload = function()
+		{
+			oListManager.Init() ;
+			window.top.IsLoadedResourcesList = true ;
+		}
+		</script>
+	</head>
+	<body class="FileArea" bottomMargin="10" leftMargin="10" topMargin="10" rightMargin="10">
+		<table id="tableFiles" cellSpacing="1" cellPadding="0" width="100%" border="0">
+		</table>
+	</body>
+</html>

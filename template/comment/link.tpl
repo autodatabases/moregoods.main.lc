@@ -1,0 +1,1 @@
+<a href="./?{$sLink}&id={$sId}" >{$oLanguage->getMessage('Comments')} ({$iCommentNumber})</a><br>

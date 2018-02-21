@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+.ddmenu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow:hidden
+}
+* html .ddmenu{
+	overflow:visible;
+	height:1%}
+.ddmenu li{
+	width:107px;
+	float:left;
+	padding:0 0 0 0px;
+	font-size:11px}
+.ddmenu li ul {
+	display: none;
+	list-style: none;
+	position: absolute;
+	margin: 0px 0 0 0px;
+	z-index: 90;
+	width:167px;
+	padding: 0 0 12px 0;
+	border-top:1px solid #fff;
+	background:url(../image/design/hint_bg.gif) 0 bottom no-repeat}
+* html .ddmenu li ul{
+	margin:18px 0 0 -154px;}
+*:first-child+html .ddmenu li ul{
+	margin:18px 0 0 -154px;}
+.ddmenu li ul li{
+	float:none;
+	padding:0;
+	margin:0;
+	width:167px;
+	background: none}
+.ddmenu li ul a {
+	display: block;
+	text-align:left;
+	font-size:12px;
+	padding: 0 0 0 10px;
+	background: none;
+	line-height:22px;
+	height:22px;
+	font-size:11px;
+	color:#fff;
+	border-bottom:1px solid #fff;
+	background:#b3c8f3;
+	white-space: nowrap;
+	text-decoration:none}
+.ddmenu li ul li a.first {}
+.ddmenu li ul a.ddchildhover {}
+.ddmenu li ul li a:hover {
+	color: #fff; 
+	padding-left:12px; 
+	text-decoration:none}

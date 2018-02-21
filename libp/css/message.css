@@ -1,0 +1,30 @@
+.secodary_tabs{
+	padding:0;
+	margin: 5px 0 5px 0;
+	list-style:none;
+	overflow:hidden;
+	border-bottom:2px solid #AA311E;
+	clear:both}
+* html .secodary_tabs{
+	overflow:visible;
+	height:1%}
+.secodary_tabs li{
+	margin-right:2px;
+	padding:0 0 0 20px;
+	float:left;
+	background:url(/image/design/tab.png) 0 0 no-repeat #eee;}
+.secodary_tabs li a, .secodary_tabs li a:hover{
+	display:block;
+	padding:3px 20px 3px 0;
+	background:url(/image/design/tab.png) right 0 no-repeat;
+	font-size:11px;
+	color:#383d3d;
+	text-decoration:none;
+	font-weight:bold}
+.secodary_tabs li.sel{
+	background:url(/image/design/tab_sel.png) 0 0 no-repeat #AA311E;
+	opacity:0.7;
+	filter:alpha(opacity=70)}
+.secodary_tabs li.sel a, .secodary_tabs li.sel a:hover{
+	background:url(/image/design/tab_sel.png) right 0 no-repeat;
+	color:#fff}
