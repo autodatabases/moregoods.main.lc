@@ -24,7 +24,7 @@ include_once(SERVER_PATH.$sForumUrl.'includes/constants.php');
 //-----------------------------------------------------------------------------------------------------
 $DB_CONF = array(
 'User' => 'root',
-'Password' => '',
+'Password' => '123456',
 'Database' => 'obriy',
 'Host' => '127.0.0.1',
 'Port' => '3306',
